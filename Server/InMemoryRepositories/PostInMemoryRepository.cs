@@ -6,6 +6,16 @@ namespace InMemoryRepositories;
 public class PostInMemoryRepository : IPostRepository
 {
     private List<Post> posts;
+    public PostInMemoryRepository()
+    {
+        posts = new List<Post>
+        {
+            new Post { Id = 1, Title = "Getting Started with C#", Body = "C# and .NET are powerful tools for building modern applications.", UserId = 1 },
+            new Post { Id = 2, Title = "Dependency Injection Explained", Body = "Passing dependencies via constructors makes testing clean and modular.", UserId = 2 },
+            new Post { Id = 3, Title = "LINQ Basics", Body = "LINQ lets you query collections effortlessly in C#.", UserId = 1 },
+            new Post { Id = 4, Title = "Console Apps UI", Body = "Structuring CLI menus with single responsibility view classes.", UserId = 3 }
+        };
+    }
     public Task<Post> AddAsync(Post post)
     {
         post.Id = posts.Any()

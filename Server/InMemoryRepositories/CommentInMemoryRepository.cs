@@ -6,6 +6,16 @@ namespace InMemoryRepositories;
 public class CommentInMemoryRepository : ICommentRepository
 {
     private List<Comment> comments;
+    public CommentInMemoryRepository()
+    {
+        comments = new List<Comment>
+        {
+            new Comment { Id = 1, Body = "Great article, very clear!", UserId = 2, PostId = 1 },
+            new Comment { Id = 2, Body = "Thanks for explaining this so simply.", UserId = 3, PostId = 1 },
+            new Comment { Id = 3, Body = "Dependency injection saved my architecture.", UserId = 1, PostId = 2 },
+            new Comment { Id = 4, Body = "LINQ is definitely my favorite C# feature.", UserId = 4, PostId = 3 }
+        };
+    }
     public Task<Comment> AddAsync(Comment comment)
     {
         comment.Id = comments.Any()

@@ -8,6 +8,14 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.11"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Server\Entities\Entities.csproj" />
+      <ProjectReference Include="..\..\Server\FileRepositories\FileRepositories.csproj" />
+      <ProjectReference Include="..\..\Server\RepositoryContracts\RepositoryContracts.csproj" />
+      <ProjectReference Include="..\ApiContracts\ApiContracts.csproj" />
     </ItemGroup>
 
 </Project>
